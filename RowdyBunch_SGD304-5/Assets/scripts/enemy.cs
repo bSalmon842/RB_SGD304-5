@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,10 +14,10 @@ public class enemy : MonoBehaviour
 	public float timeForJump;
 	public bool isJumping;
 	Rigidbody2D rb;
-
+	
 	public int flagID;
-
-	void Start()
+	
+	void Awake()
 	{
 		moveDirIsRight = false;
 		moveSpeed = 1.0f;
@@ -27,6 +27,8 @@ public class enemy : MonoBehaviour
 		jumpDuration = Time.time + 1.0f;
 		isJumping = false;
 		rb = GetComponent<Rigidbody2D>();
+		
+		levelHandler.currentEnemies += 1;
 	}
 	
 	void FixedUpdate()
@@ -39,14 +41,14 @@ public class enemy : MonoBehaviour
 			isJumping = true;
 			timeForJump = jumpDuration;
 		}
-
+		
 		if (isJumping)
 		{
 			rb.gravityScale = 0.0f;
 			newPosition.y += (jumpSpeed * Time.deltaTime) * timeForJump;
 			timeForJump -= Time.deltaTime;
 		}
-
+		
 		if (moveDirIsRight)
 		{
 			// Move Right
@@ -65,21 +67,16 @@ public class enemy : MonoBehaviour
 			isJumping = false;
 			rb.gravityScale = 1.0f;
 		}
-
+		
 		gameObject.transform.position = newPosition;
 		lastPosition = currPosition;
 	}
-
+	
 	void OnCollisionEnter2D(Collision2D col)
 	{
 		if (col.gameObject.tag == "EnemyFlag")
 		{
-			enemyFlag flag = col.gameObject.GetComponent<enemyFlag>();
-			if(flag.flagID != flagID)
-			{
-				Physics2D.IgnoreCollision(col.collider, gameObject.GetComponent<Collider2D>());
-			}
-			else
+			if(col.gameObject.GetComponent<enemyFlag>().flagID == flagID)
 			{
 				moveDirIsRight = !moveDirIsRight;
 			}
@@ -88,5 +85,10 @@ public class enemy : MonoBehaviour
 		{
 			Physics2D.IgnoreCollision(col.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
 		}		
+	}
+	
+	void OnDestroy()
+	{
+		levelHandler.currentEnemies -= 1;
 	}
 }
