@@ -16,10 +16,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Ground hitbox
+  - Sand
+  - Background
   - 
   - 
   - 
@@ -43,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 4131988309
+    locked: 0
+  - name: background
+    uniqueID: 2507687071
     locked: 0
