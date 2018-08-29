@@ -23,8 +23,8 @@ public class player : MonoBehaviour
 		weapon = gameObject.transform.GetChild(0);
 		weapon.gameObject.SetActive(false);
 		
-		moveSpeed = 1.5f;
-		jumpSpeed = 5.0f;
+		moveSpeed = 2.5f;
+		jumpSpeed = 4.0f;
 		currPosition = new Vector3(0.0f, 0.0f, 0.0f);
 		lastPosition = currPosition;
 		jumpDuration = Time.time + 1.0f;

@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: 92ded56b25a00a04fb9ff5d9f79eb071
+timeCreated: 1535547584
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: extrudedSurface10
+    100002: extrudedSurface11
+    100004: extrudedSurface12
+    100006: extrudedSurface13
+    100008: extrudedSurface14
+    100010: extrudedSurface15
+    100012: extrudedSurface16
+    100014: extrudedSurface17
+    100016: extrudedSurface18
+    100018: extrudedSurface19
+    100020: extrudedSurface21
+    100022: extrudedSurface22
+    100024: extrudedSurface23
+    100026: extrudedSurface24
+    100028: extrudedSurface25
+    100030: extrudedSurface26
+    100032: extrudedSurface27
+    100034: extrudedSurface3
+    100036: extrudedSurface4
+    100038: extrudedSurface5
+    100040: extrudedSurface6
+    100042: extrudedSurface7
+    100044: extrudedSurface8
+    100046: extrudedSurface9
+    100048: group1
+    100050: group2
+    100052: group3
+    100054: group4
+    100056: group5
+    100058: pPlane10
+    100060: pPlane10 1
+    100062: pPlane10 2
+    100064: pPlane10 3
+    100066: pPlane10 4
+    100068: pPlane11
+    100070: pPlane11 1
+    100072: pPlane11 2
+    100074: pPlane11 3
+    100076: pPlane11 4
+    100078: pPlane12
+    100080: pPlane12 1
+    100082: pPlane12 2
+    100084: pPlane12 3
+    100086: pPlane12 4
+    100088: pPlane13
+    100090: pPlane13 1
+    100092: pPlane13 2
+    100094: pPlane13 3
+    100096: pPlane13 4
+    100098: pPlane14
+    100100: pPlane14 1
+    100102: pPlane14 2
+    100104: pPlane14 3
+    100106: pPlane14 4
+    100108: pPlane15
+    100110: pPlane15 1
+    100112: pPlane15 2
+    100114: pPlane15 3
+    100116: pPlane15 4
+    100118: pPlane16
+    100120: pPlane16 1
+    100122: pPlane16 2
+    100124: pPlane16 3
+    100126: pPlane16 4
+    100128: pPlane17
+    100130: pPlane17 1
+    100132: pPlane17 2
+    100134: pPlane17 3
+    100136: pPlane17 4
+    100138: pPlane18
+    100140: pPlane18 1
+    100142: pPlane18 2
+    100144: pPlane18 3
+    100146: pPlane18 4
+    100148: pPlane19
+    100150: pPlane19 1
+    100152: pPlane19 2
+    100154: pPlane19 3
+    100156: pPlane19 4
+    100158: pPlane20
+    100160: pPlane20 1
+    100162: pPlane20 2
+    100164: pPlane20 3
+    100166: pPlane20 4
+    100168: pPlane21
+    100170: pPlane21 1
+    100172: pPlane21 2
+    100174: pPlane21 3
+    100176: pPlane21 4
+    100178: pPlane22
+    100180: pPlane22 1
+    100182: pPlane22 2
+    100184: pPlane22 3
+    100186: pPlane22 4
+    100188: pPlane23
+    100190: pPlane23 1
+    100192: pPlane23 2
+    100194: pPlane23 3
+    100196: pPlane23 4
+    100198: pPlane24
+    100200: pPlane24 1
+    100202: pPlane24 2
+    100204: pPlane24 3
+    100206: pPlane24 4
+    100208: pPlane25
+    100210: pPlane25 1
+    100212: pPlane25 2
+    100214: pPlane25 3
+    100216: pPlane25 4
+    100218: pPlane26
+    100220: pPlane26 1
+    100222: pPlane26 2
+    100224: pPlane26 3
+    100226: pPlane26 4
+    100228: //RootNode
+    100230: Spider_tree 1
+    400000: extrudedSurface10
+    400002: extrudedSurface11
+    400004: extrudedSurface12
+    400006: extrudedSurface13
+    400008: extrudedSurface14
+    400010: extrudedSurface15
+    400012: extrudedSurface16
+    400014: extrudedSurface17
+    400016: extrudedSurface18
+    400018: extrudedSurface19
+    400020: extrudedSurface21
+    400022: extrudedSurface22
+    400024: extrudedSurface23
+    400026: extrudedSurface24
+    400028: extrudedSurface25
+    400030: extrudedSurface26
+    400032: extrudedSurface27
+    400034: extrudedSurface3
+    400036: extrudedSurface4
+    400038: extrudedSurface5
+    400040: extrudedSurface6
+    400042: extrudedSurface7
+    400044: extrudedSurface8
+    400046: extrudedSurface9
+    400048: group1
+    400050: group2
+    400052: group3
+    400054: group4
+    400056: group5
+    400058: pPlane10
+    400060: pPlane10 1
+    400062: pPlane10 2
+    400064: pPlane10 3
+    400066: pPlane10 4
+    400068: pPlane11
+    400070: pPlane11 1
+    400072: pPlane11 2
+    400074: pPlane11 3
+    400076: pPlane11 4
+    400078: pPlane12
+    400080: pPlane12 1
+    400082: pPlane12 2
+    400084: pPlane12 3
+    400086: pPlane12 4
+    400088: pPlane13
+    400090: pPlane13 1
+    400092: pPlane13 2
+    400094: pPlane13 3
+    400096: pPlane13 4
+    400098: pPlane14
+    400100: pPlane14 1
+    400102: pPlane14 2
+    400104: pPlane14 3
+    400106: pPlane14 4
+    400108: pPlane15
+    400110: pPlane15 1
+    400112: pPlane15 2
+    400114: pPlane15 3
+    400116: pPlane15 4
+    400118: pPlane16
+    400120: pPlane16 1
+    400122: pPlane16 2
+    400124: pPlane16 3
+    400126: pPlane16 4
+    400128: pPlane17
+    400130: pPlane17 1
+    400132: pPlane17 2
+    400134: pPlane17 3
+    400136: pPlane17 4
+    400138: pPlane18
+    400140: pPlane18 1
+    400142: pPlane18 2
+    400144: pPlane18 3
+    400146: pPlane18 4
+    400148: pPlane19
+    400150: pPlane19 1
+    400152: pPlane19 2
+    400154: pPlane19 3
+    400156: pPlane19 4
+    400158: pPlane20
+    400160: pPlane20 1
+    400162: pPlane20 2
+    400164: pPlane20 3
+    400166: pPlane20 4
+    400168: pPlane21
+    400170: pPlane21 1
+    400172: pPlane21 2
+    400174: pPlane21 3
+    400176: pPlane21 4
+    400178: pPlane22
+    400180: pPlane22 1
+    400182: pPlane22 2
+    400184: pPlane22 3
+    400186: pPlane22 4
+    400188: pPlane23
+    400190: pPlane23 1
+    400192: pPlane23 2
+    400194: pPlane23 3
+    400196: pPlane23 4
+    400198: pPlane24
+    400200: pPlane24 1
+    400202: pPlane24 2
+    400204: pPlane24 3
+    400206: pPlane24 4
+    400208: pPlane25
+    400210: pPlane25 1
+    400212: pPlane25 2
+    400214: pPlane25 3
+    400216: pPlane25 4
+    400218: pPlane26
+    400220: pPlane26 1
+    400222: pPlane26 2
+    400224: pPlane26 3
+    400226: pPlane26 4
+    400228: //RootNode
+    400230: Spider_tree 1
+    2100000: WillowLeaf
+    2100002: SpiderTree
+    2100004: SpiderRoot
+    2300000: extrudedSurface10
+    2300002: extrudedSurface11
+    2300004: extrudedSurface12
+    2300006: extrudedSurface13
+    2300008: extrudedSurface14
+    2300010: extrudedSurface15
+    2300012: extrudedSurface16
+    2300014: extrudedSurface17
+    2300016: extrudedSurface18
+    2300018: extrudedSurface19
+    2300020: extrudedSurface21
+    2300022: extrudedSurface22
+    2300024: extrudedSurface23
+    2300026: extrudedSurface24
+    2300028: extrudedSurface25
+    2300030: extrudedSurface26
+    2300032: extrudedSurface27
+    2300034: extrudedSurface3
+    2300036: extrudedSurface4
+    2300038: extrudedSurface5
+    2300040: extrudedSurface6
+    2300042: extrudedSurface7
+    2300044: extrudedSurface8
+    2300046: extrudedSurface9
+    2300048: pPlane10
+    2300050: pPlane10 1
+    2300052: pPlane10 2
+    2300054: pPlane10 3
+    2300056: pPlane10 4
+    2300058: pPlane11
+    2300060: pPlane11 1
+    2300062: pPlane11 2
+    2300064: pPlane11 3
+    2300066: pPlane11 4
+    2300068: pPlane12
+    2300070: pPlane12 1
+    2300072: pPlane12 2
+    2300074: pPlane12 3
+    2300076: pPlane12 4
+    2300078: pPlane13
+    2300080: pPlane13 1
+    2300082: pPlane13 2
+    2300084: pPlane13 3
+    2300086: pPlane13 4
+    2300088: pPlane14
+    2300090: pPlane14 1
+    2300092: pPlane14 2
+    2300094: pPlane14 3
+    2300096: pPlane14 4
+    2300098: pPlane15
+    2300100: pPlane15 1
+    2300102: pPlane15 2
+    2300104: pPlane15 3
+    2300106: pPlane15 4
+    2300108: pPlane16
+    2300110: pPlane16 1
+    2300112: pPlane16 2
+    2300114: pPlane16 3
+    2300116: pPlane16 4
+    2300118: pPlane17
+    2300120: pPlane17 1
+    2300122: pPlane17 2
+    2300124: pPlane17 3
+    2300126: pPlane17 4
+    2300128: pPlane18
+    2300130: pPlane18 1
+    2300132: pPlane18 2
+    2300134: pPlane18 3
+    2300136: pPlane18 4
+    2300138: pPlane19
+    2300140: pPlane19 1
+    2300142: pPlane19 2
+    2300144: pPlane19 3
+    2300146: pPlane19 4
+    2300148: pPlane20
+    2300150: pPlane20 1
+    2300152: pPlane20 2
+    2300154: pPlane20 3
+    2300156: pPlane20 4
+    2300158: pPlane21
+    2300160: pPlane21 1
+    2300162: pPlane21 2
+    2300164: pPlane21 3
+    2300166: pPlane21 4
+    2300168: pPlane22
+    2300170: pPlane22 1
+    2300172: pPlane22 2
+    2300174: pPlane22 3
+    2300176: pPlane22 4
+    2300178: pPlane23
+    2300180: pPlane23 1
+    2300182: pPlane23 2
+    2300184: pPlane23 3
+    2300186: pPlane23 4
+    2300188: pPlane24
+    2300190: pPlane24 1
+    2300192: pPlane24 2
+    2300194: pPlane24 3
+    2300196: pPlane24 4
+    2300198: pPlane25
+    2300200: pPlane25 1
+    2300202: pPlane25 2
+    2300204: pPlane25 3
+    2300206: pPlane25 4
+    2300208: pPlane26
+    2300210: pPlane26 1
+    2300212: pPlane26 2
+    2300214: pPlane26 3
+    2300216: pPlane26 4
+    3300000: extrudedSurface10
+    3300002: extrudedSurface11
+    3300004: extrudedSurface12
+    3300006: extrudedSurface13
+    3300008: extrudedSurface14
+    3300010: extrudedSurface15
+    3300012: extrudedSurface16
+    3300014: extrudedSurface17
+    3300016: extrudedSurface18
+    3300018: extrudedSurface19
+    3300020: extrudedSurface21
+    3300022: extrudedSurface22
+    3300024: extrudedSurface23
+    3300026: extrudedSurface24
+    3300028: extrudedSurface25
+    3300030: extrudedSurface26
+    3300032: extrudedSurface27
+    3300034: extrudedSurface3
+    3300036: extrudedSurface4
+    3300038: extrudedSurface5
+    3300040: extrudedSurface6
+    3300042: extrudedSurface7
+    3300044: extrudedSurface8
+    3300046: extrudedSurface9
+    3300048: pPlane10
+    3300050: pPlane10 1
+    3300052: pPlane10 2
+    3300054: pPlane10 3
+    3300056: pPlane10 4
+    3300058: pPlane11
+    3300060: pPlane11 1
+    3300062: pPlane11 2
+    3300064: pPlane11 3
+    3300066: pPlane11 4
+    3300068: pPlane12
+    3300070: pPlane12 1
+    3300072: pPlane12 2
+    3300074: pPlane12 3
+    3300076: pPlane12 4
+    3300078: pPlane13
+    3300080: pPlane13 1
+    3300082: pPlane13 2
+    3300084: pPlane13 3
+    3300086: pPlane13 4
+    3300088: pPlane14
+    3300090: pPlane14 1
+    3300092: pPlane14 2
+    3300094: pPlane14 3
+    3300096: pPlane14 4
+    3300098: pPlane15
+    3300100: pPlane15 1
+    3300102: pPlane15 2
+    3300104: pPlane15 3
+    3300106: pPlane15 4
+    3300108: pPlane16
+    3300110: pPlane16 1
+    3300112: pPlane16 2
+    3300114: pPlane16 3
+    3300116: pPlane16 4
+    3300118: pPlane17
+    3300120: pPlane17 1
+    3300122: pPlane17 2
+    3300124: pPlane17 3
+    3300126: pPlane17 4
+    3300128: pPlane18
+    3300130: pPlane18 1
+    3300132: pPlane18 2
+    3300134: pPlane18 3
+    3300136: pPlane18 4
+    3300138: pPlane19
+    3300140: pPlane19 1
+    3300142: pPlane19 2
+    3300144: pPlane19 3
+    3300146: pPlane19 4
+    3300148: pPlane20
+    3300150: pPlane20 1
+    3300152: pPlane20 2
+    3300154: pPlane20 3
+    3300156: pPlane20 4
+    3300158: pPlane21
+    3300160: pPlane21 1
+    3300162: pPlane21 2
+    3300164: pPlane21 3
+    3300166: pPlane21 4
+    3300168: pPlane22
+    3300170: pPlane22 1
+    3300172: pPlane22 2
+    3300174: pPlane22 3
+    3300176: pPlane22 4
+    3300178: pPlane23
+    3300180: pPlane23 1
+    3300182: pPlane23 2
+    3300184: pPlane23 3
+    3300186: pPlane23 4
+    3300188: pPlane24
+    3300190: pPlane24 1
+    3300192: pPlane24 2
+    3300194: pPlane24 3
+    3300196: pPlane24 4
+    3300198: pPlane25
+    3300200: pPlane25 1
+    3300202: pPlane25 2
+    3300204: pPlane25 3
+    3300206: pPlane25 4
+    3300208: pPlane26
+    3300210: pPlane26 1
+    3300212: pPlane26 2
+    3300214: pPlane26 3
+    3300216: pPlane26 4
+    4300000: pPlane10
+    4300002: pPlane11
+    4300004: pPlane12
+    4300006: pPlane13
+    4300008: pPlane14
+    4300010: pPlane15
+    4300012: pPlane16
+    4300014: pPlane17
+    4300016: pPlane18
+    4300018: pPlane19
+    4300020: pPlane20
+    4300022: pPlane21
+    4300024: pPlane22
+    4300026: pPlane23
+    4300028: pPlane24
+    4300030: pPlane25
+    4300032: pPlane26
+    4300034: pPlane10
+    4300036: pPlane11
+    4300038: pPlane12
+    4300040: pPlane13
+    4300042: pPlane14
+    4300044: pPlane15
+    4300046: pPlane16
+    4300048: pPlane17
+    4300050: pPlane18
+    4300052: pPlane19
+    4300054: pPlane20
+    4300056: pPlane21
+    4300058: pPlane22
+    4300060: pPlane23
+    4300062: pPlane24
+    4300064: pPlane25
+    4300066: pPlane26
+    4300068: pPlane10
+    4300070: pPlane11
+    4300072: pPlane12
+    4300074: pPlane13
+    4300076: pPlane14
+    4300078: pPlane15
+    4300080: pPlane16
+    4300082: pPlane17
+    4300084: pPlane18
+    4300086: pPlane19
+    4300088: pPlane20
+    4300090: pPlane21
+    4300092: pPlane22
+    4300094: pPlane23
+    4300096: pPlane24
+    4300098: pPlane25
+    4300100: pPlane26
+    4300102: pPlane10
+    4300104: pPlane11
+    4300106: pPlane12
+    4300108: pPlane13
+    4300110: pPlane14
+    4300112: pPlane15
+    4300114: pPlane16
+    4300116: pPlane17
+    4300118: pPlane18
+    4300120: pPlane19
+    4300122: pPlane20
+    4300124: pPlane21
+    4300126: pPlane22
+    4300128: pPlane23
+    4300130: pPlane24
+    4300132: pPlane25
+    4300134: pPlane26
+    4300136: pPlane10
+    4300138: pPlane11
+    4300140: pPlane12
+    4300142: pPlane13
+    4300144: pPlane14
+    4300146: pPlane15
+    4300148: pPlane16
+    4300150: pPlane17
+    4300152: pPlane18
+    4300154: pPlane19
+    4300156: pPlane20
+    4300158: pPlane21
+    4300160: pPlane22
+    4300162: pPlane23
+    4300164: pPlane24
+    4300166: pPlane25
+    4300168: pPlane26
+    4300170: extrudedSurface3
+    4300172: extrudedSurface4
+    4300174: extrudedSurface5
+    4300176: extrudedSurface6
+    4300178: extrudedSurface7
+    4300180: extrudedSurface8
+    4300182: extrudedSurface9
+    4300184: extrudedSurface10
+    4300186: extrudedSurface11
+    4300188: extrudedSurface12
+    4300190: extrudedSurface13
+    4300192: extrudedSurface14
+    4300194: extrudedSurface15
+    4300196: extrudedSurface16
+    4300198: extrudedSurface17
+    4300200: extrudedSurface18
+    4300202: extrudedSurface19
+    4300204: extrudedSurface21
+    4300206: extrudedSurface22
+    4300208: extrudedSurface23
+    4300210: extrudedSurface24
+    4300212: extrudedSurface25
+    4300214: extrudedSurface26
+    4300216: extrudedSurface27
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
