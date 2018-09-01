@@ -48,5 +48,9 @@ public class pelicanCompanion : companionBase
 		{
 			gameObject.transform.position = lastPosition;
 		}
+		else if (col.gameObject.tag == "HazardNode")
+		{
+			Destroy(col.gameObject);
+		}
 	}
 }

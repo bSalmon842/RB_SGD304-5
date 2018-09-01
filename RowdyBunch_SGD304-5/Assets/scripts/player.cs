@@ -17,6 +17,7 @@ public class player : MonoBehaviour
 	public bool isAttacking;
 	Rigidbody2D rb;
 	public Transform weapon;
+	public GameObject[] cameras;
 	
 	void Awake()
 	{
@@ -33,6 +34,10 @@ public class player : MonoBehaviour
 		isCrouching = false;
 		isAttacking = false;
 		rb = GetComponent<Rigidbody2D>();
+		
+		cameras = GameObject.FindGameObjectsWithTag("MainCamera");
+		cameras[0].SetActive(false);
+		cameras[1].SetActive(true);
 	}
 	
 	void FixedUpdate()
@@ -43,6 +48,17 @@ public class player : MonoBehaviour
 		if (Input.GetButtonDown("Companion Switch") && (!levelHandler.isCompanionUnavailable))
 		{
 			levelHandler.isCompanionActive = !levelHandler.isCompanionActive;
+			
+			if (levelHandler.isCompanionActive)
+			{
+				cameras[0].SetActive(true);
+				cameras[1].SetActive(false);
+			}
+			else
+			{
+				cameras[0].SetActive(false);
+				cameras[1].SetActive(true);
+			}
 		}
 		
 		if (!levelHandler.isCompanionActive)

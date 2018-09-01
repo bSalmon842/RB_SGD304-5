@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - EnemyFlag
   - Ground
+  - Companion
+  - KillHazard
+  - HazardNode
   layers:
   - Default
   - TransparentFX

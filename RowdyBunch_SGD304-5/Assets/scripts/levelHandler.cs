@@ -9,4 +9,5 @@ public static class levelHandler
 	public static bool isCompanionUnavailable = false;
 	public static int currentEnemies = 0;
 	public static int levelStatus;
+	public static int nodesRemaining;
 }
