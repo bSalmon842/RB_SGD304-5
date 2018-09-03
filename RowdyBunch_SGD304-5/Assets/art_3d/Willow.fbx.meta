@@ -20,7 +20,17 @@ ModelImporter:
     4300000: willow4Main
     4300002: willow4Leaf
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WillowLeaf
+    second: {fileID: 2100000, guid: 686dcaa0ff851424fad1cbf50685bdd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WillowTree
+    second: {fileID: 2100000, guid: 92ded56b25a00a04fb9ff5d9f79eb071, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
@@ -69,7 +79,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

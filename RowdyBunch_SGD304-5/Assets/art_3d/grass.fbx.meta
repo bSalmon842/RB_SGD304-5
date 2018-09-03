@@ -14,7 +14,12 @@ ModelImporter:
     3300000: grassWindWide1Main4
     4300000: grassWindWide1Main4
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bushes1_grassWindWide1Shader
+    second: {fileID: 2100000, guid: a690c1e8cbe7c9048aa01f397d74a0fe, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -63,7 +68,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
