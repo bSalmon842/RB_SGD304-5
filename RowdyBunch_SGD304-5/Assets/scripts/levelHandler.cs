@@ -10,4 +10,5 @@ public static class levelHandler
 	public static int currentEnemies = 0;
 	public static int levelStatus;
 	public static int nodesRemaining;
+	public static bool playerIsCrouching;
 }

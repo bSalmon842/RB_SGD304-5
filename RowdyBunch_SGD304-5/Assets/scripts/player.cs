@@ -124,11 +124,20 @@ public class player : MonoBehaviour
 		
 		gameObject.transform.position = newPosition;
 		lastPosition = currPosition;
+		
+		if (isCrouching)
+		{
+			levelHandler.playerIsCrouching = true;
+		}
+		else
+		{
+			levelHandler.playerIsCrouching = false;
+		}
 	}
 	
 	void OnCollisionEnter2D(Collision2D col)
 	{
-		if (col.gameObject.tag == "Ground")
+		if (col.gameObject.tag == "Ground" || col.gameObject.tag == "NightGround")
 		{
 			gameObject.transform.position = lastPosition;
 		}

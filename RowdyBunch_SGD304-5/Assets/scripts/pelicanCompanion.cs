@@ -30,7 +30,12 @@ public class pelicanCompanion : companionBase
 		{
 			Vector3 relPos = player.transform.position;
 			relPos.x -= 2.0f;
-			relPos.y += 2.0f;
+			
+			if (!levelHandler.playerIsCrouching)
+			{
+				relPos.y += 2.0f;
+			}
+			
 			newPosition = relPos;
 		}
 		if (levelHandler.isCompanionActive)
