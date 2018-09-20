@@ -18,6 +18,7 @@ public class player : MonoBehaviour
 	Rigidbody2D rb;
 	public Transform weapon;
 	public GameObject[] cameras;
+	public GameObject companion;
 	
 	void Awake()
 	{
@@ -35,6 +36,8 @@ public class player : MonoBehaviour
 		isAttacking = false;
 		rb = GetComponent<Rigidbody2D>();
 		
+		companion = GameObject.FindWithTag("Companion");
+		
 		cameras = GameObject.FindGameObjectsWithTag("MainCamera");
 		cameras[0].SetActive(false);
 		cameras[1].SetActive(true);
@@ -51,11 +54,18 @@ public class player : MonoBehaviour
 			
 			if (levelHandler.isCompanionActive)
 			{
+				// Change to Companion Camera
 				cameras[0].SetActive(true);
 				cameras[1].SetActive(false);
 			}
 			else
 			{
+				// Change to Player Camera
+				Vector3 companionResetPos = new Vector3((gameObject.transform.position.x - 2.0f),
+														(gameObject.transform.position.y + 2.0f),
+														gameObject.transform.position.z);
+				companion.transform.position = companionResetPos;
+				companion.GetComponent<parallax>().FixedUpdate();
 				cameras[0].SetActive(false);
 				cameras[1].SetActive(true);
 			}

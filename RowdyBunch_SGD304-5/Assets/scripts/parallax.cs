@@ -23,8 +23,9 @@ public class parallax : MonoBehaviour
 		newPosition = currPosition;
 	}
 	
-	void FixedUpdate()
+	public void FixedUpdate()
 	{
+		// TODO(bSalmon): Fix Companion Switch Parallax Bug
 		newPosition = gameObject.transform.position;
 		
 		if (newPosition.x != currPosition.x)
