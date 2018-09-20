@@ -12,6 +12,8 @@ TagManager:
   - HazardNode
   - NightGround
   - Sonar
+  - Background
+  - Foreground
   layers:
   - Default
   - TransparentFX

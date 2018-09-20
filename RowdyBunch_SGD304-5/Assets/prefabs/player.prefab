@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 4073856287078680}
   - component: {fileID: 20577355044719432}
   - component: {fileID: 124453746940078860}
+  - component: {fileID: 114212850502884734}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -212,6 +213,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.12, y: 5.12}
   m_EdgeRadius: 0
+--- !u!114 &114212850502884734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1803181739464876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaab27fe8b662a4418009b540d835a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundObjects: []
+  foregroundObjects: []
+  currPosition: {x: 0, y: 0, z: 0}
+  newPosition: {x: 0, y: 0, z: 0}
+  backgroundParallaxCoef: 0
+  foregroundParallaxCoef: 0
 --- !u!114 &114256214562202058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -234,6 +252,8 @@ MonoBehaviour:
   isAttacking: 0
   weapon: {fileID: 0}
   cameras: []
+  backgroundObjects: []
+  foregroundObjects: []
 --- !u!114 &114420860821666406
 MonoBehaviour:
   m_ObjectHideFlags: 1
