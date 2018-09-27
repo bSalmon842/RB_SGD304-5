@@ -29,7 +29,15 @@ public class pelicanCompanion : companionBase
 		if (!levelHandler.isCompanionActive)
 		{
 			Vector3 relPos = player.transform.position;
-			relPos.x -= 2.0f;
+			
+			if (levelHandler.playerIsFacingRight)
+			{
+				relPos.x -= 2.0f;
+			}
+			else
+			{
+				relPos.x += 2.0f;
+			}
 			
 			if (!levelHandler.playerIsCrouching)
 			{

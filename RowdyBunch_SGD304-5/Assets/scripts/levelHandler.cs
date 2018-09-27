@@ -11,4 +11,5 @@ public static class levelHandler
 	public static int levelStatus;
 	public static int nodesRemaining;
 	public static bool playerIsCrouching;
+	public static bool playerIsFacingRight = true;
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+	public int health;
 	public float moveSpeed;
 	public float jumpSpeed;
 	public Vector3 currPosition;
@@ -16,15 +17,16 @@ public class player : MonoBehaviour
 	public bool isCrouching;
 	public bool isAttacking;
 	Rigidbody2D rb;
-	public Transform weapon;
+	public GameObject weapon;
 	public GameObject[] cameras;
 	public GameObject companion;
 	
 	void Awake()
 	{
-		weapon = gameObject.transform.GetChild(0);
-		weapon.gameObject.SetActive(false);
+		weapon = GameObject.FindWithTag("Weapon");
+		weapon.SetActive(false);
 		
+		health = 3;
 		moveSpeed = 2.5f;
 		jumpSpeed = 4.0f;
 		currPosition = new Vector3(0.0f, 0.0f, 0.0f);
@@ -47,6 +49,13 @@ public class player : MonoBehaviour
 	{
 		currPosition = gameObject.transform.position;
 		Vector3 newPosition = currPosition;
+		
+		Physics2D.IgnoreCollision(weapon.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
+		
+		if (health <= 0)
+		{
+			Destroy(gameObject);
+		}
 		
 		if (Input.GetButtonDown("Companion Switch") && (!levelHandler.isCompanionUnavailable))
 		{
@@ -79,6 +88,15 @@ public class player : MonoBehaviour
 				timeForJump = jumpDuration;
 			}
 			
+			if (Input.GetAxis("Horizontal") > 0)
+			{
+				levelHandler.playerIsFacingRight = true;
+			}
+			else if (Input.GetAxis("Horizontal") < 0)
+			{
+				levelHandler.playerIsFacingRight = false;
+			}
+			
 			newPosition.x += Input.GetAxis("Horizontal") * (moveSpeed * Time.deltaTime);
 			
 			if (Input.GetButtonDown("Crouch") && (!isCrouching))
@@ -98,7 +116,7 @@ public class player : MonoBehaviour
 			
 			if (Input.GetButtonDown("Attack"))
 			{
-				weapon.gameObject.SetActive(true);
+				weapon.SetActive(true);
 				isAttacking = true;
 				timeForAttack = attackDuration;
 			}
@@ -123,6 +141,21 @@ public class player : MonoBehaviour
 		if (isAttacking)
 		{
 			timeForAttack -= Time.deltaTime;
+			
+			Vector3 weaponSpawnPos = gameObject.transform.position;
+			
+			if (levelHandler.playerIsFacingRight)
+			{
+				weaponSpawnPos.x += 0.5f;
+			}
+			else
+			{
+				weaponSpawnPos.x -= 0.5f;
+			}
+			
+			weaponSpawnPos.y += 0.25f;
+			
+			weapon.transform.position = weaponSpawnPos;
 			
 			if (timeForAttack < 0.0f)
 			{
@@ -151,5 +184,9 @@ public class player : MonoBehaviour
 		{
 			gameObject.transform.position = lastPosition;
 		}
+		/*else if (col.gameObject.tag == "Weapon")
+  {
+   Physics2D.IgnoreCollision(col.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
+  }*/
 	}
 }

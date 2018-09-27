@@ -84,7 +84,11 @@ public class enemy : MonoBehaviour
 		else if (col.gameObject.tag == "Enemy")
 		{
 			Physics2D.IgnoreCollision(col.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
-		}		
+		}
+		else if (col.gameObject.tag == "Player")
+		{
+			col.gameObject.GetComponent<player>().health--;
+		}
 	}
 	
 	void OnDestroy()
