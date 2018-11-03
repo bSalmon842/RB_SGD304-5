@@ -21,4 +21,4 @@ Joshua Bugg - Level Design / Audio Producer
 
 Luke Eggington - 3D Artist
 
-Brock Salmon - Lead Programmer
+Brock Salmon - Programmer
