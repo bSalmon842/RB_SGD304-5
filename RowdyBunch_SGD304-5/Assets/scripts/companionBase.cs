@@ -45,7 +45,7 @@ public class companionBase : MonoBehaviour
 		}
 		
 		newPosition.x += Input.GetAxis("Horizontal") * (moveSpeed * Time.deltaTime);
-		
+        
 		if (canFly)
 		{
 			newPosition.y += Input.GetAxis("Vertical") * (moveSpeed * Time.deltaTime);

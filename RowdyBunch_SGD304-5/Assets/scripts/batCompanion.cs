@@ -90,6 +90,17 @@ public class batCompanion : companionBase
 			}
 		}
 		
+        
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (Input.GetAxis("Horizontal") > 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        
+        
 		gameObject.transform.position = newPosition;
 		lastPosition = currPosition;
 	}

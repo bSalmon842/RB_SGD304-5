@@ -16,7 +16,7 @@ public class parallax : MonoBehaviour
 		backgroundObjects = GameObject.FindGameObjectsWithTag("Background");
 		foregroundObjects = GameObject.FindGameObjectsWithTag("Foreground");
 		
-		backgroundParallaxCoef = 0.5f;
+		backgroundParallaxCoef = 0.1f;
 		foregroundParallaxCoef = 0.25f;
 		
 		currPosition = gameObject.transform.position;

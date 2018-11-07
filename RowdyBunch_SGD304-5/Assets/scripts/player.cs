@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+    public Sprite attackSprite;
+    public Sprite crouchSprite;
+    public Sprite jumpSprite;
+    public Sprite standSprite;
+    
 	public int health;
 	public float moveSpeed;
 	public float jumpSpeed;
@@ -20,7 +25,8 @@ public class player : MonoBehaviour
 	public GameObject weapon;
 	public GameObject[] cameras;
 	public GameObject companion;
-	
+    
+    
 	void Awake()
 	{
 		weapon = GameObject.FindWithTag("Weapon");
@@ -41,6 +47,7 @@ public class player : MonoBehaviour
 		companion = GameObject.FindWithTag("Companion");
 		
 		cameras = GameObject.FindGameObjectsWithTag("MainCamera");
+        cameras[0].GetComponent<AudioListener>().enabled = false;
 		cameras[0].SetActive(false);
 		cameras[1].SetActive(true);
 	}
@@ -65,6 +72,8 @@ public class player : MonoBehaviour
 			{
 				// Change to Companion Camera
 				cameras[0].SetActive(true);
+                cameras[1].GetComponent<AudioListener>().enabled = false;
+                cameras[0].GetComponent<AudioListener>().enabled = true;
 				cameras[1].SetActive(false);
 			}
 			else
@@ -74,10 +83,12 @@ public class player : MonoBehaviour
 														(gameObject.transform.position.y + 2.0f),
 														gameObject.transform.position.z);
 				companion.transform.position = companionResetPos;
-				companion.GetComponent<parallax>().FixedUpdate();
-				cameras[0].SetActive(false);
+				cameras[0].GetComponent<parallax>().FixedUpdate();
 				cameras[1].SetActive(true);
-			}
+                cameras[0].GetComponent<AudioListener>().enabled = false;
+                cameras[1].GetComponent<AudioListener>().enabled = true;
+                cameras[0].SetActive(false);
+            }
 		}
 		
 		if (!levelHandler.isCompanionActive)
@@ -86,32 +97,35 @@ public class player : MonoBehaviour
 			{
 				isJumping = true;
 				timeForJump = jumpDuration;
+                GetComponent<SpriteRenderer>().sprite = jumpSprite;
 			}
 			
 			if (Input.GetAxis("Horizontal") > 0)
 			{
 				levelHandler.playerIsFacingRight = true;
-			}
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
 			else if (Input.GetAxis("Horizontal") < 0)
 			{
 				levelHandler.playerIsFacingRight = false;
+                GetComponent<SpriteRenderer>().flipX = true;
 			}
 			
 			newPosition.x += Input.GetAxis("Horizontal") * (moveSpeed * Time.deltaTime);
 			
 			if (Input.GetButtonDown("Crouch") && (!isCrouching))
 			{
-				Vector3 vec = gameObject.transform.localScale;
-				vec.y *= 0.5f;
-				gameObject.transform.localScale = vec;
-				isCrouching = true;
-			}
+                Vector2 crouchSize = new Vector2(3.0f, 4.0f);
+                GetComponent<BoxCollider2D>().size = crouchSize;
+                isCrouching = true;
+                GetComponent<SpriteRenderer>().sprite = crouchSprite;
+            }
 			if (Input.GetButtonUp("Crouch") && (isCrouching))
 			{
-				Vector3 vec = gameObject.transform.localScale;
-				vec.y *= 2.0f;
-				gameObject.transform.localScale = vec;
-				isCrouching = false;
+                Vector2 standSize = new Vector2(3.0f, 8.0f);
+				GetComponent<BoxCollider2D>().size = standSize;
+                isCrouching = false;
+                GetComponent<SpriteRenderer>().sprite = standSprite;
 			}
 			
 			if (Input.GetButtonDown("Attack"))
@@ -119,6 +133,7 @@ public class player : MonoBehaviour
 				weapon.SetActive(true);
 				isAttacking = true;
 				timeForAttack = attackDuration;
+                GetComponent<SpriteRenderer>().sprite = attackSprite;
 			}
 		}
 		
@@ -135,8 +150,11 @@ public class player : MonoBehaviour
 		{
 			timeForJump = 0.0f;
 			isJumping = false;
-			rb.gravityScale = 1.0f;
+			rb.gravityScale = 2.0f;
+            GetComponent<SpriteRenderer>().sprite = standSprite;
 		}
+        
+        
 		
 		if (isAttacking)
 		{
@@ -146,7 +164,8 @@ public class player : MonoBehaviour
 			
 			if (levelHandler.playerIsFacingRight)
 			{
-				weaponSpawnPos.x += 0.5f;
+				weaponSpawnPos.x += 0.45f;
+                weaponSpawnPos.y += 0.1f;
 			}
 			else
 			{
@@ -162,6 +181,7 @@ public class player : MonoBehaviour
 				weapon.gameObject.SetActive(false);
 				isAttacking = false;
 				timeForAttack = 0.0f;
+                GetComponent<SpriteRenderer>().sprite = standSprite;
 			}
 		}
 		

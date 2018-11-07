@@ -50,7 +50,16 @@ public class pelicanCompanion : companionBase
 		{
 			Move();
 		}
-		
+        
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (Input.GetAxis("Horizontal") > 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        
 		gameObject.transform.position = newPosition;
 		lastPosition = currPosition;
 	}
