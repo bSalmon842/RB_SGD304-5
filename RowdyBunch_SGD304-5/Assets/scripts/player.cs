@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    public Sprite attackSprite;
-    public Sprite crouchSprite;
-    public Sprite jumpSprite;
-    public Sprite standSprite;
-    
-	public int health;
+    public int health;
 	public float moveSpeed;
 	public float jumpSpeed;
 	public Vector3 currPosition;
@@ -26,6 +21,7 @@ public class player : MonoBehaviour
 	public GameObject[] cameras;
 	public GameObject companion;
     
+    Animator animator;
     
 	void Awake()
 	{
@@ -47,14 +43,17 @@ public class player : MonoBehaviour
 		companion = GameObject.FindWithTag("Companion");
 		
 		cameras = GameObject.FindGameObjectsWithTag("MainCamera");
-        cameras[0].GetComponent<AudioListener>().enabled = false;
-		cameras[0].SetActive(false);
+        
+        cameras[0].SetActive(false);
+		cameras[0].GetComponent<AudioListener>().enabled = false;
 		cameras[1].SetActive(true);
-	}
+        
+        animator = GetComponent<Animator>();
+    }
 	
 	void FixedUpdate()
 	{
-		currPosition = gameObject.transform.position;
+        currPosition = gameObject.transform.position;
 		Vector3 newPosition = currPosition;
 		
 		Physics2D.IgnoreCollision(weapon.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
@@ -97,7 +96,7 @@ public class player : MonoBehaviour
 			{
 				isJumping = true;
 				timeForJump = jumpDuration;
-                GetComponent<SpriteRenderer>().sprite = jumpSprite;
+                animator.Play("boy_jump");
 			}
 			
 			if (Input.GetAxis("Horizontal") > 0)
@@ -118,14 +117,14 @@ public class player : MonoBehaviour
                 Vector2 crouchSize = new Vector2(3.0f, 4.0f);
                 GetComponent<BoxCollider2D>().size = crouchSize;
                 isCrouching = true;
-                GetComponent<SpriteRenderer>().sprite = crouchSprite;
+                animator.Play("boy_crouch");
             }
 			if (Input.GetButtonUp("Crouch") && (isCrouching))
 			{
                 Vector2 standSize = new Vector2(3.0f, 8.0f);
 				GetComponent<BoxCollider2D>().size = standSize;
                 isCrouching = false;
-                GetComponent<SpriteRenderer>().sprite = standSprite;
+                animator.Play("boy_crouch_stand");
 			}
 			
 			if (Input.GetButtonDown("Attack"))
@@ -133,7 +132,7 @@ public class player : MonoBehaviour
 				weapon.SetActive(true);
 				isAttacking = true;
 				timeForAttack = attackDuration;
-                GetComponent<SpriteRenderer>().sprite = attackSprite;
+                animator.Play("boy_attack");
 			}
 		}
 		
@@ -146,12 +145,12 @@ public class player : MonoBehaviour
 		}
 		
 		// Reset timeOfJump for next jump in case it went below 0
-		if ((timeForJump < 0.0f) && (currPosition.y == lastPosition.y))
+		if ((timeForJump < -1.0f) && (currPosition.y == lastPosition.y))
 		{
 			timeForJump = 0.0f;
 			isJumping = false;
 			rb.gravityScale = 2.0f;
-            GetComponent<SpriteRenderer>().sprite = standSprite;
+            animator.Play("boy_jump_stand");
 		}
         
         
@@ -181,7 +180,7 @@ public class player : MonoBehaviour
 				weapon.gameObject.SetActive(false);
 				isAttacking = false;
 				timeForAttack = 0.0f;
-                GetComponent<SpriteRenderer>().sprite = standSprite;
+                animator.Play("boy_attack_stand");
 			}
 		}
 		
