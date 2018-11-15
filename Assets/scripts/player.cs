@@ -1,3 +1,10 @@
+/*
+Project: Land of Dreams (SGD305)
+File: player.cs
+Author: Brock Salmon
+Notice: (C) Copyright 2018 by Brock Salmon. All Rights Reserved.
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +24,7 @@ public class player : MonoBehaviour
 	public bool isCrouching;
 	public bool isAttacking;
     public bool isMoving;
+    public bool isPaused;
 	Rigidbody2D rb;
 	public GameObject weapon;
 	public GameObject[] cameras;
@@ -30,7 +38,7 @@ public class player : MonoBehaviour
 		weapon = GameObject.FindWithTag("Weapon");
 		weapon.SetActive(false);
 		
-		health = 3;
+        health = 3;
 		moveSpeed = 5.0f;
 		jumpSpeed = 4.0f;
 		currPosition = new Vector3(0.0f, 0.0f, 0.0f);
@@ -40,11 +48,19 @@ public class player : MonoBehaviour
 		isJumping = false;
 		isCrouching = false;
 		isAttacking = false;
+        isPaused = false;
 		rb = GetComponent<Rigidbody2D>();
 		
 		companion = GameObject.FindWithTag("Companion");
 		
 		cameras = GameObject.FindGameObjectsWithTag("MainCamera");
+        
+        if (cameras[0].transform.parent.gameObject != companion)
+        {
+            GameObject temp = cameras[0];
+            cameras[0] = cameras[1];
+            cameras[1] = temp;
+        }
         
         cameras[0].SetActive(false);
 		cameras[0].GetComponent<AudioListener>().enabled = false;
@@ -94,6 +110,14 @@ public class player : MonoBehaviour
 		
 		if (!levelHandler.isCompanionActive)
 		{
+            if (isCrouching)
+            {
+                moveSpeed = 2.5f;
+            }
+            else
+            {
+                moveSpeed = 5.0f;
+            }
             
 			if (Input.GetButtonDown("Jump") && (!isJumping))
 			{
@@ -114,6 +138,14 @@ public class player : MonoBehaviour
                 {
                     animator.SetBool("boy_run", false);
                 }
+                
+                
+                if (isCrouching)
+                {
+                    animator.SetBool("boy_crouch", false);
+                    animator.SetBool("boy_crouch_walk", true);
+                }
+                
                 isMoving = true;
             }
 			else if (Input.GetAxis("Horizontal") < 0)
@@ -128,10 +160,22 @@ public class player : MonoBehaviour
                 {
                     animator.SetBool("boy_run", false);
                 }
+                
+                if (isCrouching)
+                {
+                    animator.SetBool("boy_crouch", false);
+                    animator.SetBool("boy_crouch_walk", true);
+                }
+                
                 isMoving = true;
 			}
             else if (Input.GetAxis("Horizontal") == 0 && !isAttacking)
             {
+                if (isCrouching)
+                {
+                    animator.SetBool("boy_crouch_walk", false);
+                }
+                
                 animator.SetBool("boy_run", false);
                 GetComponent<SpriteRenderer>().sprite = standSprite;
                 isMoving = false;
@@ -144,13 +188,22 @@ public class player : MonoBehaviour
                 Vector2 crouchSize = new Vector2(3.0f, 4.0f);
                 GetComponent<BoxCollider2D>().size = crouchSize;
                 isCrouching = true;
-                animator.SetBool("boy_crouch", true);
+                
+                if (!isMoving)
+                {
+                    animator.SetBool("boy_crouch", true);
+                }
+                else
+                {
+                    animator.SetBool("boy_crouch", false);
+                }
             }
             if (Input.GetButtonUp("Crouch") && (isCrouching))
             {
                 Vector2 standSize = new Vector2(3.0f, 8.0f);
                 GetComponent<BoxCollider2D>().size = standSize;
                 isCrouching = false;
+                animator.SetBool("boy_crouch_walk", false);
                 animator.SetBool("boy_crouch", false);
             }
             

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50019894383740352}
   - component: {fileID: 61544702709067958}
   - component: {fileID: 114428348576327254}
+  - component: {fileID: 95775472811708884}
   m_Layer: 0
   m_Name: blockingEnemy
   m_TagString: BlockingEnemy
@@ -37,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1442685095253972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -44.150223, y: -0.81, z: 0}
-  m_LocalScale: {x: 0.689765, y: 0.5464561, z: 2.4980862}
+  m_LocalPosition: {x: 119.84834, y: 1.8220935, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 2.4980862}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -79,15 +80,32 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 2.83, y: 2.48}
     newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
+--- !u!95 &95775472811708884
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442685095253972}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 20b3fd6da1c67854ba464ab2715acf2a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114428348576327254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,8 +151,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4df853c862bd24940aea7f407b1cc0ab, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: dc8fe36aed717e5468de58d9dd0f9dc0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

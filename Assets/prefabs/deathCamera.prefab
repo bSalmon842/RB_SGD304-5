@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4335456993458176}
   - component: {fileID: 20313828154425554}
   - component: {fileID: 124824360090777094}
-  - component: {fileID: 81116773019723646}
   - component: {fileID: 114438722897199996}
   m_Layer: 0
   m_Name: deathCamera
@@ -79,13 +78,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &81116773019723646
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1728923962628096}
-  m_Enabled: 1
 --- !u!114 &114438722897199996
 MonoBehaviour:
   m_ObjectHideFlags: 1

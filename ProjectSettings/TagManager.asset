@@ -18,6 +18,8 @@ TagManager:
   - VerticalEnemy
   - BlockingEnemy
   - Weapon
+  - PauseMenu
+  - DeathScreen
   layers:
   - Default
   - TransparentFX

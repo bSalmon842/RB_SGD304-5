@@ -59,7 +59,6 @@ GameObject:
   - component: {fileID: 212363038434768802}
   - component: {fileID: 50292613998624320}
   - component: {fileID: 61905778191285046}
-  - component: {fileID: 20775599264587394}
   - component: {fileID: 114595758530338714}
   m_Layer: 0
   m_Name: companion_bat
@@ -101,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1747168756594890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.2202873, y: 2.65597, z: 0}
+  m_LocalPosition: {x: -13.726075, y: 6.598958, z: 0}
   m_LocalScale: {x: 0.1562719, y: 0.1251377, z: 1}
   m_Children:
   - {fileID: 4852413649361748}
@@ -115,42 +114,6 @@ Camera:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1663522514493390}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!20 &20775599264587394
-Camera:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1747168756594890}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1

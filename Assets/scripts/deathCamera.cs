@@ -1,3 +1,10 @@
+/*
+Project: Land of Dreams (SGD305)
+File: deathCamera.cs
+Author: Brock Salmon
+Notice: (C) Copyright 2018 by Brock Salmon. All Rights Reserved.
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +12,13 @@ using UnityEngine;
 public class deathCamera : MonoBehaviour
 {
 	public GameObject player;
+    public GameObject deathScreen;
 	
 	void Awake()
 	{
 		player = GameObject.FindWithTag("Player");
+        deathScreen = GameObject.FindWithTag("DeathScreen");
+        deathScreen.SetActive(false);
 	}
 	
 	void Update()
@@ -21,5 +31,14 @@ public class deathCamera : MonoBehaviour
 			newPosition.z -= 10.0f;
 			gameObject.transform.position = newPosition;
 		}
+        else
+        {
+            deathScreen.SetActive(true);
+        }
+        
+        if (Input.GetButtonDown("Restart"))
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
 	}
 }
