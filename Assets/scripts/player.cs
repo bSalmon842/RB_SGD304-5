@@ -33,8 +33,10 @@ public class player : MonoBehaviour
     public Sprite standSprite;
     Animator animator;
     
-	void Awake()
+	void Start()
 	{
+        jumpDuration = 0;
+        attackDuration = 0;
 		weapon = GameObject.FindWithTag("Weapon");
 		weapon.SetActive(false);
 		
@@ -43,8 +45,10 @@ public class player : MonoBehaviour
 		jumpSpeed = 4.0f;
 		currPosition = new Vector3(0.0f, 0.0f, 0.0f);
 		lastPosition = currPosition;
-		jumpDuration = Time.time + 1.0f;
-		attackDuration = Time.time + 0.5f;
+		
+        jumpDuration = 1.0f;
+		attackDuration = 0.5f;
+        
 		isJumping = false;
 		isCrouching = false;
 		isAttacking = false;

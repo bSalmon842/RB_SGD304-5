@@ -13,9 +13,11 @@ using UnityEngine.SceneManagement;
 public class levelProgressor : MonoBehaviour {
     
     public string sceneName;
+    public bool test = false;
     
 	void OnCollisionEnter2D(Collision2D col)
 	{
+        test = true;
 		if (col.gameObject.tag == "Player")
 		{
             StartCoroutine(LoadNextScene());

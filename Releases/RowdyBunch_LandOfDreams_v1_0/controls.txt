@@ -1,0 +1,7 @@
+Movement - WASD/Arrows
+Attack - Left Click
+Crouch - Left Ctrl
+Jump - Space Bar
+Companion Switch - C
+Restart Level - R
+Skip Cutscene - K

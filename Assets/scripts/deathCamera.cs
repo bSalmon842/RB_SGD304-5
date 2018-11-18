@@ -8,6 +8,7 @@ Notice: (C) Copyright 2018 by Brock Salmon. All Rights Reserved.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class deathCamera : MonoBehaviour
 {
@@ -38,7 +39,18 @@ public class deathCamera : MonoBehaviour
         
         if (Input.GetButtonDown("Restart"))
         {
-            Application.LoadLevel(Application.loadedLevel);
+            StartCoroutine(RestartScene());
         }
+        
 	}
+    
+    IEnumerator RestartScene()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+        
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
 }
